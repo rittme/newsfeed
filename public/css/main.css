@@ -1,0 +1,68 @@
+body {
+    
+}
+
+.main {
+    margin:50px auto;
+    border: #2c3e50 40px solid;
+    border-radius: 20px;
+    padding:50px 50px 10px;
+    width:700px;
+    background:#16A085;
+}
+
+h1 {
+    font-family: 'Press Start 2P';
+    font-size: 70px;
+    font-weight: normal;
+    margin:0;
+    color:#FFFFFF;
+    text-shadow: -4px -4px 0 rgba(0,0,0,0.2);
+}
+
+
+h2 {
+    color:#F1C40F;
+    text-align: right;
+    margin:0;
+    text-shadow: -2px -2px 0 rgba(0,0,0,0.2);
+}
+
+dl {
+    padding:10px 20px 20px;
+    border:1px solid #1abc9c;
+}
+
+dt {
+    background: #f39c12;
+    padding:7px;
+    margin-top: 10px;
+    color:#fff;
+    border-radius: 6px 6px 0 0;
+    line-height: 20px;
+}
+
+dt a {
+    color:#fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+dt a:hover {
+    text-decoration: underline;
+}
+
+dd {
+    background:#ECF0F1;
+    margin:0;
+    padding:7px;
+    color:#777;
+    font-size: 12px;
+    border-radius: 0 0 6px 6px;
+}
+
+svg {
+    vertical-align: top;
+    width:20px;
+    height:20px;
+}
