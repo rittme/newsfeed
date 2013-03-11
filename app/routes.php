@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	$news = News::paginate(15);
+	$news = News::paginate(20);
     return View::make('list')->with('news',$news);
 });
 

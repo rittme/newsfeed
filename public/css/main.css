@@ -1,19 +1,14 @@
-body {
-    
-}
-
-.main {
-    margin:50px auto;
-    border: #2c3e50 40px solid;
+.powerbox {
+    margin:5% auto;
+    border: #2c3e50 2em solid;
     border-radius: 20px;
-    padding:50px 50px 10px;
-    width:700px;
+    padding:5% 5% 1%;
+    max-width:700px;
     background:#16A085;
 }
 
-h1 {
+.logo {
     font-family: 'Press Start 2P';
-    font-size: 70px;
     font-weight: normal;
     margin:0;
     color:#FFFFFF;
@@ -21,19 +16,19 @@ h1 {
 }
 
 
-h2 {
+.title {
     color:#F1C40F;
     text-align: right;
     margin:0;
     text-shadow: -2px -2px 0 rgba(0,0,0,0.2);
 }
 
-dl {
+.main {
     padding:10px 20px 20px;
-    border:1px solid #1abc9c;
+    border:1px dashed #1abc9c;
 }
 
-dt {
+.linkbox-title {
     background: #f39c12;
     padding:7px;
     margin-top: 10px;
@@ -42,17 +37,17 @@ dt {
     line-height: 20px;
 }
 
-dt a {
+.linkbox-title a {
     color:#fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-dt a:hover {
+.linkbox-title a:hover {
     text-decoration: underline;
 }
 
-dd {
+.linkbox-content {
     background:#ECF0F1;
     margin:0;
     padding:7px;
@@ -61,8 +56,43 @@ dd {
     border-radius: 0 0 6px 6px;
 }
 
-svg {
+.svg-icon {
     vertical-align: top;
     width:20px;
     height:20px;
+}
+
+.pagination {
+    width:100%;
+    text-align: center;
+}
+
+.pagination ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.pagination ul li{
+    display:inline-block;
+    position:relative;
+    background:#777;   
+    background:#1abc9c;
+    margin:2px;
+    box-shadow: 2px 2px #008c6c;
+}
+
+
+.pagination ul li a{
+    color:#FFFFFF;
+    text-decoration: none;
+    display: block;
+    padding:5px;
+}
+
+.pagination ul li:hover {
+    box-shadow: 1px 1px #008c6c;
+    top:1px;
+    left:1px;
+    background:#2ed0b0;
 }

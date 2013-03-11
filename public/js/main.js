@@ -1,0 +1,1 @@
+ jQuery("#logo").fitText(0.915);
