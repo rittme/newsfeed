@@ -1,6 +1,33 @@
 @extends('template')
 
 @section('content')
+<div class="main add-form">
+    {{Form::open()}}
+    {{Form::text('name',Input::old('name'), array('placeholder' => 'Title','class'=>"linkbox-title"))}}
+    {{Form::text('url',Input::old('url'), array('placeholder' => 'URL'))}}
+    <div class="radiobox">
+        <label class="radio">
+            {{Form::radio('category', 'news');}}
+            News
+        </label>
+        <label class="radio">
+            {{Form::radio('category', 'tutorial');}}
+            Tutorial
+        </label>
+        <label class="radio">
+            {{Form::radio('category', 'good stuff');}}
+            Good Struff
+        </label>
+        <label class="radio">
+            {{Form::radio('category', 'resource');}}
+            Resouces
+        </label>
+        
+        {{Form::button('Add',array("class"=>"btn btn-success"))}}
+    </div>
+    {{Form::token()}}
+    {{Form::close()}}
+</div>
             <dl class="main">
                 <?php foreach ($news as $n): ?>
                     <dt class="linkbox-title"><a target="_blank" href="{{URL::to('link/'.$n->id)}}">
@@ -20,4 +47,8 @@
                 
             </dl>
             <?php echo $news->links(); ?>
+@stop
+
+@section('analytics')
+
 @stop
