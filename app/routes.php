@@ -88,6 +88,32 @@ Route::post('panel', function(){
     return Response::json($new->toArray());
 });
 
-Route::any('test', function(){
-    return var_dump(News::find(7)->toJson());
-});
+Route::get('bm', array('before' => 'auth', function()
+{
+    $input = array(
+        'name'    => Input::get('name'),
+        'url'     => Input::get('url'),
+        'category'=> Input::get('category')
+    )
+;
+    $rule = array(
+        'name'     => 'required', 
+        'url'      => 'required|url',
+        'category' => 'required');
+
+    $validator = Validator::make($input, $rule);
+
+    if ($validator->fails()) {
+        $messages = $validator->messages();
+        return var_dump($messages);
+    }
+
+    $new = News::create(array(
+        'name' => $input['name'],
+        'url'  =>  $input['url'],
+        'category' => $input['category'],
+        'user_id' => Auth::user()->id,
+    ));
+
+    return Redirect::to(Input::get('origin'));
+}));
