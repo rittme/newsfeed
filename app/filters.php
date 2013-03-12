@@ -35,7 +35,14 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::route('login');
+	if (Auth::guest()) {
+        if (Session::has('origin')){  
+            Session::keep(array('origin'));
+        } else {
+            Session::flash('origin',URL::current());
+        }
+        return Redirect::route('login');  
+    } 
 });
 
 

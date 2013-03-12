@@ -26,7 +26,7 @@ Route::get('login', function() {
    return View::make('admin.login');
 });
 
-Route::post('login', function() {
+Route::post('login', array("as" => "login", function() {
     $input = array(
         'email'    => Input::get('email'),
         'password' => Input::get('password')
@@ -42,13 +42,17 @@ Route::post('login', function() {
         return Redirect::to('login')->withErrors($validator);
     }
 
-    if (Auth::attempt(array('email' => $input['email'], 'password' => $input['password']))) {
-        return Redirect::to('panel');
+    if (Auth::attempt(array('email' => $input['email'], 'password' => $input['password']),true)) {
+        if(Session::has('origin')){
+            return Redirect::to(Session::get('origin'));
+        } else {
+            return Redirect::to('panel');
+        }
     } else {
         Input::flash('only', array('email'));
         return Redirect::to('login')->with('error','Authentication failed!');
     }
-});
+}));
 
 Route::get('panel', function(){
     $news = News::orderby('created_at', 'desc')->paginate(20);
